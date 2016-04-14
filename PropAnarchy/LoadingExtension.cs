@@ -8,18 +8,21 @@ namespace PropAnarchy
     {
         public override void OnLevelLoaded(LoadMode mode)
         {
-            DetoursUtil.Deploy();
-            new GameObject("PropAnarchy").AddComponent<PropAnarchyUI>();
+            base.OnLevelLoaded(mode);
+            var go = new GameObject("PropAnarchy");
+            go.AddComponent<PropAnarchyUI>();
+            go.AddComponent<ToolMonitor>();
         }
 
         public override void OnLevelUnloading()
         {
-            DetoursUtil.Revert();
+            base.OnLevelUnloading();
             var go = GameObject.Find("PropAnarchy");
             if (go != null)
             {
                 Destroy(go);
             }
+            DetoursManager.Revert();
         }
     }
 }

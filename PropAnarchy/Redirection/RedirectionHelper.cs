@@ -61,7 +61,7 @@ namespace PropAnarchy.Redirection
         /// </summary>
         /// <param name="site"></param>
         /// <param name="target"></param>
-        public static RedirectCallsState PatchJumpTo(IntPtr site, IntPtr target)
+        private static RedirectCallsState PatchJumpTo(IntPtr site, IntPtr target)
         {
             RedirectCallsState state = new RedirectCallsState();
 
@@ -87,7 +87,7 @@ namespace PropAnarchy.Redirection
             return state;
         }
 
-        public static void RevertJumpTo(IntPtr site, RedirectCallsState state)
+        private static void RevertJumpTo(IntPtr site, RedirectCallsState state)
         {
             unsafe
             {
