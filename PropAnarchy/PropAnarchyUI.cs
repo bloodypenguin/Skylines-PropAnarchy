@@ -43,7 +43,7 @@ namespace PropAnarchy
                     SetupText();
                 }
             }
-            if (!Input.GetKey(KeyCode.RightShift) || !Input.GetKey(KeyCode.LeftShift) || !Input.GetKeyDown(KeyCode.P) ||
+            if ((!Input.GetKey(KeyCode.RightShift) && !Input.GetKey(KeyCode.LeftShift)) || !Input.GetKeyDown(KeyCode.P) ||
                 Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
             {
                 return;
