@@ -15,5 +15,11 @@ namespace PropAnarchy.Detours
             }
             tree.m_flags = (ushort)((int)tree.m_flags & -3841 | Mathf.Clamp(value, 0, 15) << 8);
         }
+
+        [RedirectMethod]
+        private static void CheckOverlap(ref TreeInstance tree, uint treeID)
+        {
+            tree.GrowState = 1;
+        }
     }
 }

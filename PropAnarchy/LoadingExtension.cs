@@ -1,27 +1,18 @@
 ﻿using ICities;
-using UnityEngine;
-using static UnityEngine.Object;
 
 namespace PropAnarchy
 {
     public class LoadingExtension : LoadingExtensionBase
     {
-        public override void OnLevelLoaded(LoadMode mode)
+        public override void OnCreated(ILoading loading)
         {
-            base.OnLevelLoaded(mode);
-            var go = new GameObject("PropAnarchy");
-            go.AddComponent<PropAnarchyUI>();
-            go.AddComponent<ToolMonitor>();
+            base.OnCreated(loading);
+            DetoursManager.Deploy();
         }
 
-        public override void OnLevelUnloading()
+        public override void OnReleased()
         {
-            base.OnLevelUnloading();
-            var go = GameObject.Find("PropAnarchy");
-            if (go != null)
-            {
-                Destroy(go);
-            }
+            base.OnReleased();
             DetoursManager.Revert();
         }
     }

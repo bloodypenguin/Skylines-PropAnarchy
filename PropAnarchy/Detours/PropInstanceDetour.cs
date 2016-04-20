@@ -1,4 +1,7 @@
-﻿using PropAnarchy.Redirection;
+﻿using ColossalFramework;
+using ColossalFramework.Math;
+using PropAnarchy.Redirection;
+using UnityEngine;
 
 namespace PropAnarchy.Detours
 {
@@ -10,6 +13,12 @@ namespace PropAnarchy.Detours
         {
             if (!value)
                 prop.m_flags = (ushort)((uint)prop.m_flags & 4294967231U);
+        }
+
+        [RedirectMethod]
+        private static void CheckOverlap(ref PropInstance prop, ushort propID)
+        {
+            prop.Blocked = false;
         }
     }
 }
