@@ -27,7 +27,7 @@ namespace PropAnarchy
             _redirects.Clear();
         }
 
-        private static bool IsDeployed()
+        public static bool IsDeployed()
         {
             return _redirects != null && _redirects.Count != 0;
         }

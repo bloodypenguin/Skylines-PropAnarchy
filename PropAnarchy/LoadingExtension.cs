@@ -1,4 +1,6 @@
 ﻿using ICities;
+using PropAnarchy.OptionsFramework;
+using UnityEngine;
 
 namespace PropAnarchy
 {
@@ -8,6 +10,26 @@ namespace PropAnarchy
         {
             base.OnCreated(loading);
             DetoursManager.Deploy();
+        }
+
+
+        public override void OnLevelLoaded(LoadMode mode)
+        {
+            if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn && !OptionsWrapper<Options>.Options.anarchyOnByDefault)
+            {
+                DetoursManager.Revert();
+            }
+            new GameObject("PropAnarchy").AddComponent<PropAnarchyUI>();
+        }
+
+        public override void OnLevelUnloading()
+        {
+            DetoursManager.Deploy(); //to save the trees on reloading
+            var go = GameObject.Find("PropAnarchy");
+            if (go != null)
+            {
+                Object.Destroy(go);
+            }
         }
 
         public override void OnReleased()

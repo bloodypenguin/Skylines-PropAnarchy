@@ -1,5 +1,6 @@
 ﻿using ColossalFramework;
 using ColossalFramework.Math;
+using PropAnarchy.OptionsFramework;
 using PropAnarchy.Redirection;
 using UnityEngine;
 
@@ -18,6 +19,10 @@ namespace PropAnarchy.Detours
         [RedirectMethod]
         private static void CheckOverlap(ref PropInstance prop, ushort propID)
         {
+            if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn)
+            {
+                return;
+            }
             prop.Blocked = false;
         }
     }

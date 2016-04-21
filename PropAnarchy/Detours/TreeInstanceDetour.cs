@@ -1,4 +1,5 @@
-﻿using PropAnarchy.Redirection;
+﻿using PropAnarchy.OptionsFramework;
+using PropAnarchy.Redirection;
 using UnityEngine;
 
 namespace PropAnarchy.Detours
@@ -19,6 +20,10 @@ namespace PropAnarchy.Detours
         [RedirectMethod]
         private static void CheckOverlap(ref TreeInstance tree, uint treeID)
         {
+            if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn)
+            {
+                return;
+            }
             tree.GrowState = 1;
         }
     }
