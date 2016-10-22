@@ -31,6 +31,7 @@ namespace PropAnarchy
             if (OptionsWrapper<Options>.Options.anarchyAlwaysOn)
             {
                 DetoursManager.Deploy();
+                SetupText();
                 return;
             }
             if (!OptionsWrapper<Options>.Options.noUi)
