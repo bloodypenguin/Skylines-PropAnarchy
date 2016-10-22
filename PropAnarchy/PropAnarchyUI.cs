@@ -24,10 +24,13 @@ namespace PropAnarchy
 
         public void Update()
         {
+            if (OptionsWrapper<Options>.Options.noUi)
+            {
+                _label.Hide();
+            }
             if (OptionsWrapper<Options>.Options.anarchyAlwaysOn)
             {
                 DetoursManager.Deploy();
-                _label.Hide();
                 return;
             }
             _label.Show();

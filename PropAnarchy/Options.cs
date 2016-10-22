@@ -7,12 +7,16 @@ namespace PropAnarchy
     {
         public Options()
         {
-            anarchyAlwaysOn = false;
+            noUi = false;
             anarchyOnByDefault = false;
             unhideAllPropsOnLevelLoading = false;
             unhideAllTreesOnLevelLoading = false;
         }
-        [Checkbox("Anarchy always ON (no UI)")]
+
+        [Checkbox("No UI")]
+        public bool noUi { set; get; }
+
+        [Checkbox("Anarchy always ON")]
         public bool anarchyAlwaysOn { set; get; }
 
         [Checkbox("Anarchy ON by default (ignored if anarchy is always ON)")]
