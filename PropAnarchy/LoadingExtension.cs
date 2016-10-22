@@ -6,27 +6,30 @@ namespace PropAnarchy
 {
     public class LoadingExtension : LoadingExtensionBase
     {
-
         public override void OnCreated(ILoading loading)
         {
             base.OnCreated(loading);
-            DetoursManager.Deploy();
+            DetoursManager.Deploy(false);
         }
 
 
         public override void OnLevelLoaded(LoadMode mode)
         {
-            if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn && !OptionsWrapper<Options>.Options.anarchyOnByDefault)
+            if (OptionsWrapper<Options>.Options.anarchyAlwaysOn || OptionsWrapper<Options>.Options.anarchyOnByDefault)
             {
-                DetoursManager.Revert();
-                PropAnarchyHook._wasAnarchyEnabled = false;
+                DetoursManager.Deploy(true);
+            }
+            else
+            {
+                DetoursManager.Revert(true);
             }
             new GameObject("PropAnarchy").AddComponent<PropAnarchyUI>();
         }
 
         public override void OnLevelUnloading()
         {
-            DetoursManager.Deploy(); //to save the trees on reloading
+            DetoursManager.Revert(true);
+            DetoursManager.Deploy(false); //to save the trees on reloading
             var go = GameObject.Find("PropAnarchy");
             if (go != null)
             {
@@ -37,7 +40,7 @@ namespace PropAnarchy
         public override void OnReleased()
         {
             base.OnReleased();
-            DetoursManager.Revert();
+            DetoursManager.Revert(true);
         }
     }
 }

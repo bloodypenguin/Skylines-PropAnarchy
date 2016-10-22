@@ -9,12 +9,16 @@ namespace PropAnarchy
     {
         private static Dictionary<MethodInfo, RedirectCallsState> _redirects;
         private static readonly object ClassLock = new object();
+        private static volatile bool _cachedDeployState = false;
 
-
-        public static bool Deploy()
+        public static bool Deploy(bool cacheDeployState)
         {
             lock (ClassLock)
             {
+                if (cacheDeployState)
+                {
+                    _cachedDeployState = true;
+                }
                 if (IsDeployed())
                 {
                     return false;
@@ -25,10 +29,14 @@ namespace PropAnarchy
 
         }
 
-        public static void Revert()
+        public static void Revert(bool cacheDeployState)
         {
             lock (ClassLock)
             {
+                if (cacheDeployState)
+                {
+                    _cachedDeployState = false;
+                }
                 if (!IsDeployed())
                 {
                     return;
@@ -50,5 +58,14 @@ namespace PropAnarchy
                 return _redirects != null && _redirects.Count != 0;
             }
         }
+
+        public static bool GetCachedDeployedState()
+        {
+            lock (ClassLock)
+            {
+                return _cachedDeployState;
+            }
+        }
+
     }
 }

@@ -8,39 +8,36 @@ namespace PropAnarchy
     {
         private static readonly object ClassLock = new object();
 
-        internal static volatile bool _wasAnarchyEnabled;
         private static volatile int _currentThread = -1;
-        public static void ImUpToNoGood()
+        public static void ImUpToNoGood(string modName)
         {
-            UnityEngine.Debug.Log("ImUpToNoGood");
+            UnityEngine.Debug.Log($"Prop Anarchy - enable prevent props & trees from disappearing ({modName})");
             lock (ClassLock)
             {
                 if (_currentThread != -1)
                 {
                     UnityEngine.Debug.LogError("Prop Anarchy - PropAnarchyHook::ImUpToNoGood() - _currentThread wasn't null");
-                    throw new Exception("Some other code already is using prop anarchy hook. Make sure all calls happen in the simulation thread");
+                    throw new Exception("Some other code is already using prop anarchy hook. Make sure all calls happen in the simulation thread");
                 }
                 _currentThread = Thread.CurrentThread.ManagedThreadId;
-                _wasAnarchyEnabled = !DetoursManager.Deploy();
+                DetoursManager.Deploy(false);
             }
         }
 
-        public static void MischiefManaged()
+        public static void MischiefManaged(string modName)
         {
-            UnityEngine.Debug.Log("MischiefManaged");
+            UnityEngine.Debug.Log($"Prop Anarchy - disable prevent props & trees from disappearing ({modName})");
             lock (ClassLock)
             {
                 if (_currentThread != Thread.CurrentThread.ManagedThreadId)
                 {
-                    UnityEngine.Debug.LogError("Prop Anarchy - PropAnarchyHook::MischiefManaged() - current thread no equal _currentThread");
-                    throw new Exception("Some other code already is using prop anarchy hook. Make sure all calls happen in the simulation thread");
+                    UnityEngine.Debug.LogError("Prop Anarchy - PropAnarchyHook::MischiefManaged() - current thread no equal to _currentThread");
+                    throw new Exception("Some other code is already using prop anarchy hook. Make sure all calls happen in the simulation thread");
                 }
-                if (_wasAnarchyEnabled)
+                if (!DetoursManager.GetCachedDeployedState())
                 {
-                    _currentThread = -1;
-                    return;
+                    DetoursManager.Revert(false);
                 }
-                DetoursManager.Revert();
                 _currentThread = -1;
             }
         }

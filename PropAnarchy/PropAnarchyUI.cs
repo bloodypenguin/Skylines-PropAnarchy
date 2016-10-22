@@ -30,7 +30,7 @@ namespace PropAnarchy
             }
             if (OptionsWrapper<Options>.Options.anarchyAlwaysOn)
             {
-                DetoursManager.Deploy();
+                DetoursManager.Deploy(true);
                 SetupText();
                 return;
             }
@@ -45,11 +45,11 @@ namespace PropAnarchy
             }
             if (DetoursManager.IsDeployed())
             {
-                DetoursManager.Revert();
+                DetoursManager.Revert(true);
             }
             else
             {
-                DetoursManager.Deploy();
+                DetoursManager.Deploy(true);
             }
         }
 
