@@ -33,8 +33,11 @@ namespace PropAnarchy
                 DetoursManager.Deploy();
                 return;
             }
-            _label.Show();
-            SetupText();
+            if (!OptionsWrapper<Options>.Options.noUi)
+            {
+                _label.Show();
+                SetupText();
+            }
             if (!InputUtil.IsComboPressed())
             {
                 return;
