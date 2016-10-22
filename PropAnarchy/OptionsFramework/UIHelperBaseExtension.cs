@@ -42,7 +42,32 @@ namespace PropAnarchy.OptionsFramework
             {
                 group.AddTextField<T>(description, name, OptionsWrapper<T>.Options.GetTextFieldAction(name));
             }
+            else if (OptionsWrapper<T>.Options.IsDropdown(name))
+            {
+                group.AddDropdown<T>(description, name, OptionsWrapper<T>.Options.GetDropdownItems(name), OptionsWrapper<T>.Options.GetDropdownAction(name));
+            }
             //TODO: more control types
+        }
+
+        private static UIDropDown AddDropdown<T>(this UIHelperBase group, string text, string propertyName, IList<KeyValuePair<string, int>> items, Action<int> action) where T : IModOptions
+        {
+            var property = typeof(T).GetProperty(propertyName);
+            var defaultCode = (int)property.GetValue(OptionsWrapper<T>.Options, null);
+            int defaultSelection;
+            try
+            {
+                defaultSelection = items.First(kvp => kvp.Value == defaultCode).Value;
+            } catch {
+                defaultSelection = 0;
+                property.SetValue(OptionsWrapper<T>.Options, items.First().Value, null);
+            }
+            return (UIDropDown) group.AddDropdown(text, items.Select(kvp => kvp.Key).ToArray(), defaultSelection, sel =>
+            {
+                var code = items[sel].Value;
+                property.SetValue(OptionsWrapper<T>.Options, code, null);
+                OptionsWrapper<T>.SaveOptions();
+                action.Invoke(code);
+            });
         }
 
         private static UICheckBox AddCheckbox<T>(this UIHelperBase group, string text, string propertyName, Action<bool> action) where T : IModOptions
