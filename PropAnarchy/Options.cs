@@ -17,8 +17,11 @@ namespace PropAnarchy
         [Checkbox("No UI")]
         public bool noUi { set; get; }
 
-        [DropDown("Toggle ON/OFF key combo", nameof(ComboType))]
-        public int keyCombo { set; get; }
+        [Checkbox("Unhide all props on level loading")]
+        public bool unhideAllPropsOnLevelLoading { set; get; }
+
+        [Checkbox("Unhide all trees on level loading")]
+        public bool unhideAllTreesOnLevelLoading { set; get; }
 
         [Checkbox("Anarchy always ON")]
         public bool anarchyAlwaysOn { set; get; }
@@ -26,11 +29,8 @@ namespace PropAnarchy
         [Checkbox("Anarchy ON by default (ignored if anarchy is always ON)")]
         public bool anarchyOnByDefault { set; get; }
 
-        [Checkbox("Unhide all props on level loading")]
-        public bool unhideAllPropsOnLevelLoading { set; get; }
-
-        [Checkbox("Unhide all trees on level loading")]
-        public bool unhideAllTreesOnLevelLoading { set; get; }
+        [DropDown("Toggle ON/OFF key combo (ignored if anarchy is always ON)", nameof(ComboType))]
+        public int keyCombo { set; get; }
 
         [XmlIgnore]
         public string FileName => "CSL-PropAnarchy.xml";
