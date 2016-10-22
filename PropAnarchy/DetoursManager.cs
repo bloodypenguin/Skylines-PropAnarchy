@@ -1,35 +1,54 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using PropAnarchy.Redirection;
 
 namespace PropAnarchy
 {
-    public class DetoursManager
+    public static class DetoursManager
     {
         private static Dictionary<MethodInfo, RedirectCallsState> _redirects;
+        private static readonly object ClassLock = new object();
 
-        public static void Deploy()
+
+        public static bool Deploy()
         {
-            if (IsDeployed())
+            lock (ClassLock)
             {
-                return;
+                if (IsDeployed())
+                {
+                    return false;
+                }
+                _redirects = RedirectionUtil.RedirectAssembly();
+                return true;
             }
-            _redirects = RedirectionUtil.RedirectAssembly();
+
         }
 
         public static void Revert()
         {
-            if (!IsDeployed())
+            lock (ClassLock)
             {
-                return;
+                if (!IsDeployed())
+                {
+                    return;
+                }
+                if (_redirects == null)
+                {
+                    UnityEngine.Debug.LogError("Prop Anarchy - DetoursManager::Revert() - _redirects field was null");
+                    return;
+                }
+                RedirectionUtil.RevertRedirects(_redirects);
+                _redirects.Clear();
             }
-            RedirectionUtil.RevertRedirects(_redirects);
-            _redirects.Clear();
         }
 
         public static bool IsDeployed()
         {
-            return _redirects != null && _redirects.Count != 0;
+            lock (ClassLock)
+            {
+                return _redirects != null && _redirects.Count != 0;
+            }
         }
     }
 }

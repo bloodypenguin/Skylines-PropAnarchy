@@ -47,6 +47,7 @@
     <Compile Include="OptionsFramework\TextFieldAttribute.cs" />
     <Compile Include="OptionsFramework\UIHelperBaseExtension.cs" />
     <Compile Include="OptionsFramework\Util.cs" />
+    <Compile Include="PropAnarchyHook.cs" />
     <Compile Include="PropAnarchyUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Redirection\RedirectionHelper.cs" />
