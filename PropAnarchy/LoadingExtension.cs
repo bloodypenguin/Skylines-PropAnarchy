@@ -6,6 +6,7 @@ namespace PropAnarchy
 {
     public class LoadingExtension : LoadingExtensionBase
     {
+
         public override void OnCreated(ILoading loading)
         {
             base.OnCreated(loading);
@@ -18,6 +19,7 @@ namespace PropAnarchy
             if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn && !OptionsWrapper<Options>.Options.anarchyOnByDefault)
             {
                 DetoursManager.Revert();
+                PropAnarchyHook._wasAnarchyEnabled = false;
             }
             new GameObject("PropAnarchy").AddComponent<PropAnarchyUI>();
         }
