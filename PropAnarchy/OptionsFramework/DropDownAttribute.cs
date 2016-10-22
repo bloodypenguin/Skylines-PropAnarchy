@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reflection;
 
 namespace PropAnarchy.OptionsFramework
@@ -30,11 +31,11 @@ namespace PropAnarchy.OptionsFramework
                 var items = new List<KeyValuePair<string, int>>();
                 foreach (var enumValue in enumValues)
                 {
-                    var code = (int) enumValue;
+                    var code = (int)enumValue;
                     var memInfo = type.GetMember(Enum.GetName(type, enumValue));
-                    var attributes = memInfo[0].GetCustomAttributes(typeof(DropDownAttribute),
+                    var attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute),
                         false);
-                    var description = ((DropDownAttribute)attributes[0]).Description;
+                    var description = ((DescriptionAttribute)attributes[0]).Description;
                     items.Add(new KeyValuePair<string, int>(description, code));
                 }
                 return items;

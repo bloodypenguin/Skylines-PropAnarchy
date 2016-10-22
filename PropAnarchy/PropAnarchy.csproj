@@ -31,16 +31,19 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ComboType.cs" />
     <Compile Include="DetoursManager.cs" />
     <Compile Include="Detours\TreeInstanceDetour.cs" />
     <Compile Include="Detours\PropInstanceDetour.cs" />
     <Compile Include="Detours\TreeToolDetour.cs" />
     <Compile Include="Detours\PropToolDetour.cs" />
+    <Compile Include="InputUtil.cs" />
     <Compile Include="LoadingExtension.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="OptionsFramework\AbstractOptionsAttribute.cs" />
     <Compile Include="OptionsFramework\CheckboxAttribute.cs" />
+    <Compile Include="OptionsFramework\DropDownAttribute.cs" />
     <Compile Include="OptionsFramework\IModOptions.cs" />
     <Compile Include="OptionsFramework\IModOptionsExtension.cs" />
     <Compile Include="OptionsFramework\OptionsWrapper.cs" />
@@ -67,6 +70,7 @@
     <Reference Include="ICities">
       <HintPath>..\..\..\..\..\Games\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
     </Reference>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Games\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>

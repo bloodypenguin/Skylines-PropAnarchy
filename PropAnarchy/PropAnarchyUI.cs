@@ -35,9 +35,7 @@ namespace PropAnarchy
             }
             _label.Show();
             SetupText();
-            if ((!Input.GetKey(KeyCode.RightShift) && !Input.GetKey(KeyCode.LeftShift)) || !Input.GetKeyDown(KeyCode.P) ||
-                Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt) || Input.GetKey(KeyCode.LeftControl) ||
-                Input.GetKey(KeyCode.RightControl))
+            if (!InputUtil.IsComboPressed())
             {
                 return;
             }

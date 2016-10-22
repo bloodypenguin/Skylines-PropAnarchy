@@ -11,10 +11,14 @@ namespace PropAnarchy
             anarchyOnByDefault = false;
             unhideAllPropsOnLevelLoading = false;
             unhideAllTreesOnLevelLoading = false;
+            keyCombo = 0;
         }
 
         [Checkbox("No UI")]
         public bool noUi { set; get; }
+
+        [DropDown("Toggle ON/OFF key combo", nameof(ComboType))]
+        public int keyCombo { set; get; }
 
         [Checkbox("Anarchy always ON")]
         public bool anarchyAlwaysOn { set; get; }
