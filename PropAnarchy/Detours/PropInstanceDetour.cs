@@ -47,7 +47,7 @@ namespace PropAnarchy.Detours
                     flag = true;
             }
             //begin mod
-            if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn)
+            if (!OptionsWrapper<Options>.Options.unhideAllPropsOnLevelLoading)
             {
                 return;
             }

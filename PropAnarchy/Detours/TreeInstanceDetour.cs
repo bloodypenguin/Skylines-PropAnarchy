@@ -47,7 +47,7 @@ namespace PropAnarchy.Detours
             if (Singleton<BuildingManager>.instance.OverlapQuad(quad, minY, maxY, collisionType, info.m_class.m_layer, (ushort)0, (ushort)0, (ushort)0))
                 flag = true;
             //begin mod
-            if (!OptionsWrapper<Options>.Options.anarchyAlwaysOn)
+            if (!OptionsWrapper<Options>.Options.unhideAllTreesOnLevelLoading)
             {
                 return;
             }
