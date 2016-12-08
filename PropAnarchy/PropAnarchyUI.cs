@@ -6,8 +6,8 @@ namespace PropAnarchy
 {
     public class PropAnarchyUI : MonoBehaviour
     {
-        private const string On = "Prop & Tree Anarchy: On";
-        private const string Off = "Prop & Tree Anarchy: Off";
+        private static string On => "Prop & Tree Anarchy: On";
+        private static string Off => "Prop & Tree Anarchy: Off";
 
         private UILabel _label;
 
