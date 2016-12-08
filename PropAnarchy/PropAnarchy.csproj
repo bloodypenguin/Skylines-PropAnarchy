@@ -41,14 +41,15 @@
     <Compile Include="LoadingExtension.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Options.cs" />
-    <Compile Include="OptionsFramework\AbstractOptionsAttribute.cs" />
-    <Compile Include="OptionsFramework\CheckboxAttribute.cs" />
-    <Compile Include="OptionsFramework\DropDownAttribute.cs" />
-    <Compile Include="OptionsFramework\IModOptions.cs" />
-    <Compile Include="OptionsFramework\IModOptionsExtension.cs" />
+    <Compile Include="OptionsFramework\Attibutes\AbstractOptionsAttribute.cs" />
+    <Compile Include="OptionsFramework\Attibutes\CheckboxAttribute.cs" />
+    <Compile Include="OptionsFramework\Attibutes\DropDownAttribute.cs" />
+    <Compile Include="OptionsFramework\Attibutes\OptionsAttribute.cs" />
+    <Compile Include="OptionsFramework\Attibutes\SliderAttribute.cs" />
+    <Compile Include="OptionsFramework\Attibutes\TextFieldAttribute.cs" />
+    <Compile Include="OptionsFramework\Extensions\CommonExtensions.cs" />
+    <Compile Include="OptionsFramework\Extensions\UIHelperBaseExtensions.cs" />
     <Compile Include="OptionsFramework\OptionsWrapper.cs" />
-    <Compile Include="OptionsFramework\TextFieldAttribute.cs" />
-    <Compile Include="OptionsFramework\UIHelperBaseExtension.cs" />
     <Compile Include="OptionsFramework\Util.cs" />
     <Compile Include="PropAnarchyHook.cs" />
     <Compile Include="PropAnarchyUI.cs" />
@@ -59,6 +60,10 @@
     <Compile Include="Redirection\RedirectReverseAttribute.cs" />
     <Compile Include="Redirection\TargetTypeAttribute.cs" />
     <Compile Include="Redirection\Tuple.cs" />
+    <Compile Include="TranslationFramework\Language.cs" />
+    <Compile Include="TranslationFramework\TranslatableAttribute.cs" />
+    <Compile Include="TranslationFramework\Translation.cs" />
+    <Compile Include="TranslationFramework\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">

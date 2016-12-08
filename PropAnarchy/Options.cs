@@ -1,9 +1,9 @@
-﻿using System.Xml.Serialization;
-using PropAnarchy.OptionsFramework;
+﻿using PropAnarchy.OptionsFramework.Attibutes;
 
 namespace PropAnarchy
 {
-    public class Options : IModOptions
+    [Options("PropAnarchy.xml", "CSL-PropAnarchy.xml")]
+    public class Options
     {
         public Options()
         {
@@ -31,8 +31,5 @@ namespace PropAnarchy
 
         [DropDown("Toggle ON/OFF key combo (ignored if anarchy is always ON)", nameof(ComboType))]
         public int keyCombo { set; get; }
-
-        [XmlIgnore]
-        public string FileName => "CSL-PropAnarchy.xml";
     }
 }
