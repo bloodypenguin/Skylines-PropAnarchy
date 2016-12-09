@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="en" ReadableName="English" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="PTA_DESCRIPTION" String="Place your props and trees wherever you like" />
+    <!-- OPTIONS -->
+    <Translation ID="PTA_OPTION_NO_UI" String="No UI" />
+    <Translation ID="PTA_OPTION_UNHIDE_PROPS" String="Unhide all props on level loading" />
+    <Translation ID="PTA_OPTION_UNHIDE_TREES" String="Unhide all trees on level loading" />
+    <Translation ID="PTA_OPTION_ALWAYS_ON" String="Anarchy always ON" />
+    <Translation ID="PTA_OPTION_DEFAULT_ON" String="Anarchy ON by default (ignored if anarchy is always ON)" />
+    <Translation ID="PTA_OPTION_COMBO" String="Toggle ON/OFF key combo (ignored if anarchy is always ON)" />
+    <!-- UI -->
+    <Translation ID="PTA_ON" String="Prop &amp; Tree Anarchy: On" />
+    <Translation ID="PTA_OFF" String="Prop &amp; Tree Anarchy: Off" />
+  </Translations>
+</Language>

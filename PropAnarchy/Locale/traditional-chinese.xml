@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="zh" ReadableName="正體中文" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="PTA_DESCRIPTION" String="Place your props and trees wherever you like" />
+    <!-- OPTIONS -->
+    <Translation ID="PTA_OPTION_NO_UI" String="无用户界面" />
+    <Translation ID="PTA_OPTION_UNHIDE_PROPS" String="读档时不隐藏所有小部件" />
+    <Translation ID="PTA_OPTION_UNHIDE_TREES" String="读档时不隐藏所有树木" />
+    <Translation ID="PTA_OPTION_ALWAYS_ON" String="始终开启无碰撞" />
+    <Translation ID="PTA_OPTION_DEFAULT_ON" String="无碰撞默认开启（无碰撞始终开启时无效）" />
+    <Translation ID="PTA_OPTION_COMBO" String="使用组合按键开 / 关(无碰撞始终开启时无效)" />
+    <!-- UI -->
+    <Translation ID="PTA_ON" String="任意放置道具 &amp; 树木功能：开" />
+    <Translation ID="PTA_OFF" String="任意放置道具 &amp; 树木功能：关" />
+  </Translations>
+</Language>

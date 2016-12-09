@@ -6,8 +6,9 @@ namespace PropAnarchy
 {
     public class PropAnarchyUI : MonoBehaviour
     {
-        private static string On => "Prop & Tree Anarchy: On";
-        private static string Off => "Prop & Tree Anarchy: Off";
+        private static string On => Mod.translation.GetTranslation("PTA_ON");
+
+        private static string Off => Mod.translation.GetTranslation("PTA_OFF");
 
         private UILabel _label;
 

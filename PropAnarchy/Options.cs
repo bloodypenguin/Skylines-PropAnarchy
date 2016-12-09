@@ -14,22 +14,22 @@ namespace PropAnarchy
             keyCombo = 0;
         }
 
-        [Checkbox("No UI")]
+        [Checkbox("PTA_OPTION_NO_UI")]
         public bool noUi { set; get; }
 
-        [Checkbox("Unhide all props on level loading")]
+        [Checkbox("PTA_OPTION_UNHIDE_PROPS")]
         public bool unhideAllPropsOnLevelLoading { set; get; }
 
-        [Checkbox("Unhide all trees on level loading")]
+        [Checkbox("PTA_OPTION_UNHIDE_TREES")]
         public bool unhideAllTreesOnLevelLoading { set; get; }
 
-        [Checkbox("Anarchy always ON")]
+        [Checkbox("PTA_OPTION_ALWAYS_ON")]
         public bool anarchyAlwaysOn { set; get; }
 
-        [Checkbox("Anarchy ON by default (ignored if anarchy is always ON)")]
+        [Checkbox("PTA_OPTION_DEFAULT_ON")]
         public bool anarchyOnByDefault { set; get; }
 
-        [DropDown("Toggle ON/OFF key combo (ignored if anarchy is always ON)", nameof(ComboType))]
+        [DropDown("PTA_OPTION_COMBO", nameof(ComboType))]
         public int keyCombo { set; get; }
     }
 }
