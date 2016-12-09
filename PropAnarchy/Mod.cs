@@ -14,7 +14,7 @@ namespace PropAnarchy
 
         public void OnSettingsUI(UIHelperBase helper)
         {
-            helper.AddOptionsGroup<Options>();
+            helper.AddOptionsGroup<Options>(s => translation.GetTranslation(s));
         }
     }
 }
