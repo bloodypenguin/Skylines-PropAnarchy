@@ -15,6 +15,7 @@ namespace PropAnarchy
 
         public override void OnLevelLoaded(LoadMode mode)
         {
+            base.OnLevelLoaded(mode);
             if (OptionsWrapper<Options>.Options.anarchyAlwaysOn || OptionsWrapper<Options>.Options.anarchyOnByDefault)
             {
                 DetoursManager.Deploy(true);
