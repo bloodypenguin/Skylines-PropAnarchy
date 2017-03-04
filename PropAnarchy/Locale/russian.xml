@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="ru" ReadableName="English" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="PTA_DESCRIPTION" String="Размещайте деревья и пропы где душа пожелает!" />
+    <!-- OPTIONS -->
+    <Translation ID="PTA_OPTION_NO_UI" String="Скрыть уродский интерфейс" />
+    <Translation ID="PTA_OPTION_UNHIDE_PROPS" String="Сделать видимыми все пропы при загрузке уровня" />
+    <Translation ID="PTA_OPTION_UNHIDE_TREES" String="Сделать видимыми все деревья при загрузке уровня" />
+    <Translation ID="PTA_OPTION_ALWAYS_ON" String="Беспредел всегда ВКЛ" />
+    <Translation ID="PTA_OPTION_DEFAULT_ON" String="Беспредел ВКЛ по умолчанию (игнорируется, если беспредел всегда ВКЛ)" />
+    <Translation ID="PTA_OPTION_COMBO" String="Комбо на ВКЛ/ВЫКЛ беспредел (игнорируется, если беспредел всегда ВКЛ)" />
+    <!-- UI -->
+    <Translation ID="PTA_ON" String="Беспредел (пропы и деревья): ВКЛ" />
+    <Translation ID="PTA_OFF" String="Беспредел (пропы и деревья): ВЫКЛ" />
+  </Translations>
+</Language>
