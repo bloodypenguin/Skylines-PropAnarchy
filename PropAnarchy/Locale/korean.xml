@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="kr" ReadableName="한국어(Korean)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="PTA_DESCRIPTION" String="여러분이 원하는 장소에 소품(prop)과 나무를 배치할 수 있습니다." />
+    <!-- OPTIONS -->
+    <Translation ID="PTA_OPTION_NO_UI" String="UI 숨기기" />
+    <Translation ID="PTA_OPTION_UNHIDE_PROPS" String="로딩시 설치된 모든 소품(prop)을 숨기지 않음" />
+    <Translation ID="PTA_OPTION_UNHIDE_TREES" String="로딩시 설치된 모든 나무를 숨기지 않음" />
+    <Translation ID="PTA_OPTION_ALWAYS_ON" String="무규칙 모드 항상 켜기" />
+    <Translation ID="PTA_OPTION_DEFAULT_ON" String="무규칙 모드 기본값으로 켜기 (항상 켜기 상태일경우 무시됨)" />
+    <Translation ID="PTA_OPTION_COMBO" String="해당 키로 켜짐/꺼짐 설정 (항상 켜기 상태일경우 무시됨)" />
+    <!-- UI -->
+    <Translation ID="PTA_ON" String="소품 &amp; 나무 무규칙배치 : 켜짐" />
+    <Translation ID="PTA_OFF" String="소품 &amp; 나무 무규칙배치 : 꺼짐" />
+  </Translations>
+</Language>
