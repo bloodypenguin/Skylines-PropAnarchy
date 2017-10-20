@@ -31,7 +31,7 @@ namespace PropAnarchy.Detours
             Vector3 position = prop.Position;
             float minY = position.y;
             float maxY = position.y + num2;
-            float num3 = !prop.Single ? 4.5f : 0.5f;
+            float num3 = !prop.Single ? 4.5f : 0.3f;
             Quad2 quad = new Quad2();
             Vector2 vector2 = VectorUtils.XZ(position);
             quad.a = vector2 + new Vector2(-num3, -num3);
