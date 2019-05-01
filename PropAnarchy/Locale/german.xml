@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language UniqueName="de" ReadableName="German" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Translations>
+    <Translation ID="PTA_DESCRIPTION" String="Platziere deine Requisiten und Bäume wo immer du willst" />
+    <!-- OPTIONS -->
+    <Translation ID="PTA_OPTION_NO_UI" String="Kein UI" />
+    <Translation ID="PTA_OPTION_UNHIDE_PROPS" String="Decke alle Requisiten beim Laden des Levels auf" />
+    <Translation ID="PTA_OPTION_UNHIDE_TREES" String="Decke alle Bäume beim Laden des Levels auf" />
+    <Translation ID="PTA_OPTION_ALWAYS_ON" String="Anarchie immer an" />
+    <Translation ID="PTA_OPTION_DEFAULT_ON" String="Anarchie standardmäßig an (ignoriert wenn Anarchie immer an)" />
+    <Translation ID="PTA_OPTION_COMBO" String="EIN/AUS-Tastenkombination umschalten (ignoriert wenn Anarchie immer an)" />
+    <!-- UI -->
+    <Translation ID="PTA_ON" String="Requisiten &amp; Bäume Anarchie: An" />
+    <Translation ID="PTA_OFF" String="Requisiten &amp; Bäume Anarchie: Aus" />
+  </Translations>
+</Language>
