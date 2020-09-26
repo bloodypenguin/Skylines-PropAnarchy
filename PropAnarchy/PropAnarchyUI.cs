@@ -14,7 +14,7 @@ namespace PropAnarchy
 
         public void Awake()
         {
-            _label = GameObject.Find("OptionsBar").GetComponent<UIPanel>().AddUIComponent<UILabel>();
+            _label = GameObject.Find("AdvisorButton").GetComponent<UIMultiStateButton>().AddUIComponent<UILabel>();
             _label.relativePosition += new Vector3(-100, 0 , 0);
         }
 
